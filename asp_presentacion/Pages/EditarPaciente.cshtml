@@ -1,0 +1,101 @@
+﻿@page
+@model asp_presentacion.Pages.EditarPacienteModel
+@{
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/styleguideHC.css" />
+    <link rel="stylesheet" href="~/css/styleEditarPaciente.css" />
+    <title>Actualizar Paciente</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-home-2.svg" />
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-bell.svg" />
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-setting.svg" />
+        </div>
+        <div class="div">
+            <a href="Cuenta">
+                <div class="arrow">
+                    <img src="~/images/left-arrow.png" />
+                </div>
+            </a>
+            <div class="overlap-2">
+                <div class="horizontal-card">
+                    <div class="your-diet-chart">Actualizar datos</div>
+                    <div class="illustration"></div>
+                </div>
+            </div>
+            <div class="form-section">
+                <form method="post">
+                    <input type="hidden" asp-for="PacienteEditable.Id" />
+                    <input type="hidden" asp-for="PacienteEditable.Cedula" />
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.Nombre">Nombre</label>
+                        <input type="text" class="form-input" asp-for="PacienteEditable.Nombre" placeholder="Ingrese su nombre completo" required>
+                        <span asp-validation-for="PacienteEditable.Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.Telefono">Teléfono</label>
+                        <input type="tel" class="form-input" asp-for="PacienteEditable.Telefono"
+                                placeholder="Ingrese su número de teléfono Solo Numeros"
+                                inputmode="numeric" pattern="[0-9]*" required>
+                        <span asp-validation-for="PacienteEditable.Telefono" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.TipoSang">Tipo de sangre</label>
+                        <select class="form-input" asp-for="PacienteEditable.TipoSang" required>
+                            <option value="">Seleccione un tipo</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                        <span asp-validation-for="PacienteEditable.TipoSang" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.Email">Email</label>
+                        <input type="email" class="form-input" asp-for="PacienteEditable.Email" placeholder="correo@ejemplo.com">
+                        <span asp-validation-for="PacienteEditable.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.Acudiente">Acudiente</label>
+                        <input type="text" class="form-input" asp-for="PacienteEditable.Acudiente" placeholder="Nombre del acudiente">
+                        <span asp-validation-for="PacienteEditable.Acudiente" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-card">
+                        <label class="form-label" asp-for="PacienteEditable.eps">EPS</label>
+                        <input type="text" class="form-input" asp-for="PacienteEditable.eps" placeholder="Entidad promotora de salud">
+                        <span asp-validation-for="PacienteEditable.eps" class="text-danger"></span>
+                    </div>
+
+                    <a href="MensajeExito">
+                        
+                            <button type="button" class="search-button1">✔</button>
+                        
+                    </a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script src="~/js/validarTipoSangre.js"></script>
+<script src="~/js/validarTelefono.js"></script>
+<script src="~/js/confirmarSalida.js"></script>
+</html>

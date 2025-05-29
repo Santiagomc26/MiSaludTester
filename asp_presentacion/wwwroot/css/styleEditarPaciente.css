@@ -1,0 +1,176 @@
+.container {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+    .container .arrow img {
+        margin-top: 10px;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .container .div {
+        background-color: var(--palettewhite);
+        width: 375px;
+        min-height: 92vh;
+        max-height: none;
+        overflow-y: scroll;
+        position: relative;
+        padding-bottom: 7px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+        .container .div::-webkit-scrollbar {
+            display: none;
+        }
+
+    .container .overlap-2 {
+        position: absolute;
+        width: 343px;
+        height: 116px;
+        top: 60px;
+        left: 16px;
+        border-radius: 12px;
+    }
+
+    .container .horizontal-card {
+        display: flex;
+        width: 343px;
+        height: 110px;
+        align-items: center;
+        gap: 10px;
+        padding: 0px 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--inkink-06);
+        border-radius: 12px;
+    }
+
+    .container .your-diet-chart {
+        position: relative;
+        flex: 1;
+        font-family: var(--heading-h5-font-family);
+        font-weight: var(--heading-h5-font-weight);
+        color: #1b6379;
+        font-size: var(--heading-h5-font-size);
+        letter-spacing: var(--heading-h5-letter-spacing);
+        line-height: var(--heading-h5-line-height);
+        font-style: var(--heading-h5-font-style);
+    }
+
+    .container .illustration {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 4px;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .container .form-section {
+        padding-top: 25px;
+        margin-top: 120px;
+        margin-bottom: 50px;
+        padding-left: 13px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .container .form-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container .form-label {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: var(--paragraph-p1-font-family);
+        font-weight: var(--paragraph-p1-font-weight);
+        color: #28bbc9;
+        font-size: 13px;
+        letter-spacing: var(--paragraph-p1-letter-spacing);
+        line-height: var(--paragraph-p1-line-height);
+        font-style: var(--paragraph-p1-font-style);
+        margin-bottom: 100px;
+    }
+
+    .container .form-input {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+        padding: 12px 15px;
+        border: 1px solid #28bbc9;
+        border-radius: 8px;
+        font-size: 12px;
+        outline: none;
+    }
+
+        .form-input:focus {
+            border-color: #0077aa;
+        }
+
+    .container .search-button1 {
+        background-color: #28bbc9;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40%;
+        font-family: var(--paragraph-p2-font-family);
+        font-size: 12px;
+        margin-top: 10px; 
+        margin-left: 100px;
+        margin-bottom: 15px;
+    }
+
+
+        .search-button1:hover {
+            background-color: #14b6bb;
+        }
+
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .form-button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .input-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        padding: 15px;
+        margin-bottom: 20px;
+        width:350px;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 16px 32px;
+        position: fixed;
+        top: 671px;
+        background-color: white;
+        box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.08);
+        width: 375px;
+        z-index: 999;
+    }
