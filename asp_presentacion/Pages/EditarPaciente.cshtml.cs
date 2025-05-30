@@ -74,13 +74,22 @@ namespace asp_presentacion.Pages
                     return Page();
                 }
 
-                // Modificar directamente con el ID que viene del formulario
+                var pacientes = await _pacientePresentacion.Buscar(new Paciente { Email = PacienteEditable.Email }, "EMAIL");
+
+                if (pacientes.Any(p => p.Id != PacienteEditable.Id))
+                {
+                    ModelState.AddModelError("PacienteEditable.Email", "El correo ya está registrado en otro paciente.");
+                    return Page();
+                }
+
+
+                // Si pasa todas las validaciones, modificar
                 var pacienteActualizado = await _pacientePresentacion.Modificar(PacienteEditable);
 
                 _logger.LogInformation("Paciente actualizado: {@Paciente}", pacienteActualizado);
 
                 Mensaje = "¡Datos actualizados correctamente!";
-                return RedirectToPage(new { id = PacienteEditable.Id });
+                return RedirectToPage("MensajeExito");
             }
             catch (Exception ex)
             {
@@ -89,5 +98,6 @@ namespace asp_presentacion.Pages
                 return Page();
             }
         }
+
     }
 }
